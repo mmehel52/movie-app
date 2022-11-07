@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import AppRouter from "./router/AppRouter";
+import Navbar from "./components/navbar/Navbar";
+const style = {
+  colors: {
+    header: "#FF4858",
+    body: "#1B7F79",
+    text: "#747F7F",
+  },
+  responsive: "724px",
+};
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={style}>
+        <Navbar />
+        <AppRouter />
+      </ThemeProvider>
     </div>
   );
 }

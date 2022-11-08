@@ -22,12 +22,10 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const MenuDiv = styled(Flex)`
-  /* @media (max-width: ${({ theme }) => theme.responsive}) {
-    flex-direction: column;
-    width: 100%;
-
-    overflow: hidden;
-  } */
+export const MenuDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
+
 export default NavbarStyled;

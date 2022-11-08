@@ -4,12 +4,14 @@ import Main from "../pages/main/Main";
 import MovieDetail from "../pages/moviedetail/MovieDetail";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import PrivateRouter from "./PrivateRouter";
 const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/moviedetail/" element={<MovieDetail />} />
-
+      <Route path="/moviedetail/:id" element={<PrivateRouter />}>
+        <Route path="" element={<MovieDetail />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>

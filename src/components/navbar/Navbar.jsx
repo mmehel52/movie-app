@@ -1,17 +1,29 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
+import { logOut } from "../../auth/firebase";
+import { AuthContext } from "../../context/AuthContext";
+import NavbarStyled, { NavLink, MenuDiv, Btn } from "./Navbarstyle";
 
-import { useState } from "react";
-import NavbarStyled, { NavLink, HamburgerMenu, MenuDiv } from "./Navbarstyle";
-
-// import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
   return (
     <NavbarStyled>
       <div style={{ color: "white", fontSize: "25px" }}>React Movie APP</div>
 
       <MenuDiv>
-        <NavLink to="/login">Login</NavLink>
-        <NavLink to="/register">Register</NavLink>
+        {currentUser ? (
+          <>
+            <p style={{ color: "white", fontSize: "1.5rem" }}>
+              {currentUser?.email.slice(0, 5)}
+            </p>
+            <NavLink onClick={() => logOut()}>Logout</NavLink>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/register">Register</NavLink>
+          </>
+        )}
       </MenuDiv>
     </NavbarStyled>
   );

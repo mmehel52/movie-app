@@ -18,7 +18,7 @@ export const InputBar = styled.input`
   border-radius: 10px;
 `;
 export const Search = styled.button`
-  background-color: ${({ theme }) => theme.colors.body};
+  background-color: ${({ theme }) => theme.colors.text};
   width: 5rem;
   height: 2rem;
   border: none;
@@ -27,7 +27,7 @@ export const Search = styled.button`
   font-size: 20px;
   &:hover {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.header};
+    background-color: ${({ theme }) => theme.colors.body};
   }
 `;
 export const SearchBar = styled.div`

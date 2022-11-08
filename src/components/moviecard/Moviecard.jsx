@@ -7,7 +7,9 @@ const Moviecard = ({ movie }) => {
   // console.log(movie);
   //
   return (
-    <MovieCard onClick={() => navigate("/moviedetail", { state: movie })}>
+    <MovieCard
+      onClick={() => navigate("/moviedetail/" + movie.id, { state: movie })}
+    >
       <CardImg src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} />
       <Det>
         <h5>{movie.title}</h5>

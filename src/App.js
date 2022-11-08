@@ -2,6 +2,7 @@ import "./App.css";
 import { ThemeProvider } from "styled-components";
 import AppRouter from "./router/AppRouter";
 import Navbar from "./components/navbar/Navbar";
+import AuthContextProvider from "./context/AuthContext";
 const style = {
   colors: {
     header: "#FF4858",
@@ -13,10 +14,12 @@ const style = {
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={style}>
-        <Navbar />
-        <AppRouter />
-      </ThemeProvider>
+      <AuthContextProvider>
+        <ThemeProvider theme={style}>
+          <Navbar />
+          <AppRouter />
+        </ThemeProvider>
+      </AuthContextProvider>
     </div>
   );
 }

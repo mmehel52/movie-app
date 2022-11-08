@@ -15,7 +15,6 @@ export const CardImg = styled.img`
   height: 20rem;
 `;
 export const Pp = styled.p`
-  background-color: ${({ theme }) => theme.colors.text};
   padding: 4px;
   margin: 4px;
   font-size: 19px;

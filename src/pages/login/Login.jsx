@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { createUser, signIn } from "../../auth/firebase";
+import { createUser, signIn, signUpWithGoogle } from "../../auth/firebase";
 import { useNavigate } from "react-router-dom";
 import LoginStyled from "./Loginstyled";
 
@@ -13,6 +13,9 @@ const Login = () => {
     e.preventDefault();
     signIn(email, password, navigate);
     console.log(email, password, navigate);
+  };
+  const handleGoogleProvider = () => {
+    signUpWithGoogle(navigate);
   };
   return (
     <LoginStyled>
@@ -40,7 +43,9 @@ const Login = () => {
           <br />
           <button>login</button>
           <br />
-          <button type="button">continue with google</button>
+          <button type="button" onClick={handleGoogleProvider}>
+            Continue with google
+          </button>
         </form>
       </div>
     </LoginStyled>

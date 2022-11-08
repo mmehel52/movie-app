@@ -20,7 +20,7 @@ const Navbar = () => {
       <MenuDiv>
         {currentUser ? (
           <>
-            <p style={{ color: "white", fontSize: "1.5rem" }}>
+            <p style={{ color: "white", fontSize: "1.2rem" }}>
               {currentUser?.displayName}
             </p>
             <NavLink to="/" onClick={() => logOut()}>

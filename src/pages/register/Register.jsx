@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { createUser } from "../../auth/firebase";
+import { createUser, signUpWithGoogle } from "../../auth/firebase";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,6 +14,9 @@ const Register = () => {
     createUser(email, password, navigate, displayName);
 
     console.log(firstName, lastName);
+  };
+  const handleGoogleProvider = () => {
+    signUpWithGoogle(navigate);
   };
   return (
     <div>
@@ -49,7 +52,9 @@ const Register = () => {
         <br />
         <button>register</button>
         <br />
-        <button type="button">continue with google</button>
+        <button type="button" onClick={handleGoogleProvider}>
+          continue with google
+        </button>
       </form>
     </div>
   );

@@ -21,7 +21,7 @@ const Navbar = () => {
         {currentUser ? (
           <>
             <p style={{ color: "white", fontSize: "1.5rem" }}>
-              {currentUser?.email.slice(0, 5)}
+              {currentUser?.displayName}
             </p>
             <NavLink to="/" onClick={() => logOut()}>
               Logout

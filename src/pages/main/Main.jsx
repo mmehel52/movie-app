@@ -10,7 +10,9 @@ const Main = () => {
   const [movie, setMovie] = useState("");
   const [searchBar, setSearchBar] = useState("");
   const { currentUser } = useContext(AuthContext);
-  const API_KEY = "a1438880f784e9a353cf7ea5917e3916";
+  const API_KEY =
+    // process.env.REACT_APP_TMDB_KEY;
+    "a1438880f784e9a353cf7ea5917e3916";
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
   const urlSearch = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchBar}`;
   useEffect(() => {

@@ -48,21 +48,21 @@ const MovieDetail = () => {
   console.log(movdet);
   return (
     <DetailStyled>
-      <h1>{movdet.title}</h1>
-      <Video src={`https://www.youtube.com/embed/${video.key}`}></Video>
+      <h1>{movdet?.title}</h1>
+      <Video src={`https://www.youtube.com/embed/${video?.key}`}></Video>
       <Bottom>
         <CardImg
-          src={`https://image.tmdb.org/t/p/w1280${movdet.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w1280${movdet?.backdrop_path}`}
         />
         <Detail>
           <div>
             <h4>Overview</h4>
-            <p>{movdet.overview}</p>
+            <p>{movdet?.overview}</p>
           </div>
           <div>
-            <Prf>Release Date:{movdet.release_date}</Prf>
-            <Prf>Rate:{movdet.vote_average}</Prf>
-            <Prf>Total Vote:{movdet.vote_count}</Prf>
+            <Prf>Release Date:{movdet?.release_date}</Prf>
+            <Prf>Rate:{movdet?.vote_average}</Prf>
+            <Prf>Total Vote:{movdet?.vote_count}</Prf>
             {movdet?.genres?.map((item) => (
               <Prf>{item?.name}</Prf>
             ))}

@@ -21,14 +21,16 @@ const Navbar = () => {
       <MenuDiv>
         {currentUser ? (
           <>
+            <NavLink to="/about">About</NavLink>
+            <NavLink onClick={() => logOut()}>Logout</NavLink>
             <p style={{ color: "white", fontSize: "1.2rem" }}>
               {currentUser?.displayName}
             </p>
             <Avatar src={avatar} alt="av" />
-            <NavLink onClick={() => logOut()}>Logout</NavLink>
           </>
         ) : (
           <>
+            <NavLink to="/about">About</NavLink>
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/register">Register</NavLink>
           </>

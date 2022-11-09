@@ -55,7 +55,10 @@ const Register = () => {
         <Btn>register</Btn>
         <br />
         <br />
-        <GoogleIcons onClick={handleGoogleProvider} />
+        <GoogleIcons
+          onClick={handleGoogleProvider}
+          style={{ cursor: "pointer" }}
+        />
       </form>
     </RegisterStyled>
   );

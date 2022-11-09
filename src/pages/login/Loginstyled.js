@@ -8,6 +8,7 @@ const LoginStyled = styled.div`
 `;
 export const CardImg = styled.img`
   width: 55rem;
+  margin-bottom: -0.2rem;
   border-right: 3px solid ${({ theme }) => theme.colors.header};
   @media (max-width: ${({ theme }) => theme.responsive}) {
     display: none;

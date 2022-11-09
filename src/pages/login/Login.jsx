@@ -46,7 +46,10 @@ const Login = () => {
           <Btn>login</Btn>
           <br />
           <br />
-          <GoogleIcons onClick={handleGoogleProvider} />
+          <GoogleIcons
+            onClick={handleGoogleProvider}
+            style={{ cursor: "pointer" }}
+          />
         </form>
       </Signin>
     </LoginStyled>

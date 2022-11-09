@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import AppRouter from "./router/AppRouter";
 import Navbar from "./components/navbar/Navbar";
 import AuthContextProvider from "./context/AuthContext";
+import { ToastContainer } from "react-toastify";
 const style = {
   colors: {
     header: "#FF4858",
@@ -18,6 +19,7 @@ function App() {
         <ThemeProvider theme={style}>
           <Navbar />
           <AppRouter />
+          <ToastContainer />
         </ThemeProvider>
       </AuthContextProvider>
     </div>

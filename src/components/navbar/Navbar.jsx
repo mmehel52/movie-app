@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "../../auth/firebase";
 import { AuthContext } from "../../context/AuthContext";
-import NavbarStyled, { NavLink, MenuDiv, Btn } from "./Navbarstyle";
+import NavbarStyled, { NavLink, MenuDiv, Btn, Avatar } from "./Navbarstyle";
+import avatar from "../../assets/icons/avatar.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -23,9 +24,8 @@ const Navbar = () => {
             <p style={{ color: "white", fontSize: "1.2rem" }}>
               {currentUser?.displayName}
             </p>
-            <NavLink to="/" onClick={() => logOut()}>
-              Logout
-            </NavLink>
+            <Avatar src={avatar} alt="av" />
+            <NavLink onClick={() => logOut()}>Logout</NavLink>
           </>
         ) : (
           <>

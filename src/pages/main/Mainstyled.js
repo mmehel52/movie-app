@@ -5,7 +5,7 @@ const MainStyled = styled(Flex)`
   padding: 3rem;
   flex-wrap: wrap;
   gap: 2rem;
-  background-color: ${({ theme }) => theme.colors.body};
+  background-color: ${({ theme }) => theme.colors.text};
 `;
 export const CardImg = styled.img`
   width: 15rem;

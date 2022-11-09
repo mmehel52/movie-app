@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { createUser, signIn, signUpWithGoogle } from "../../auth/firebase";
 import { useNavigate } from "react-router-dom";
-import LoginStyled from "./Loginstyled";
+import LoginStyled, { Btn, CardImg, Input, Signin } from "./Loginstyled";
+import GoogleIcons from "../../assets/icons/GoogleIcon";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,35 +20,35 @@ const Login = () => {
   };
   return (
     <LoginStyled>
-      <div></div>
       <div>
-        <h2>Sign In</h2>
+        <CardImg
+          src="https://media.istockphoto.com/id/1271522601/photo/pop-corn-and-on-red-armchair-cinema.jpg?s=612x612&w=0&k=20&c=XwQxmfrHb-OwV5onPUW5ApB4RaGBK7poSIzZj4q_N_g="
+          alt="#"
+        />
+      </div>
+      <Signin>
+        <h1>Sign In</h1>
         <form onSubmit={handleSubmit}>
-          <input
+          <Input
             type="email"
             placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <br />
-          <input
+          <Input
             type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <br />
-          <button>forgot password</button>
-          <Link to="/register">Sign Up</Link>
-
+          <Btn>login</Btn>
           <br />
-          <button>login</button>
           <br />
-          <button type="button" onClick={handleGoogleProvider}>
-            Continue with google
-          </button>
+          <GoogleIcons onClick={handleGoogleProvider} />
         </form>
-      </div>
+      </Signin>
     </LoginStyled>
   );
 };

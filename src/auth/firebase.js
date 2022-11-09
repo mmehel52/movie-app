@@ -9,7 +9,11 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-
+import {
+  toastSuccessNotify,
+  toastErrorNotify,
+  toastWarnNotify,
+} from "../helper/ToastNotify";
 // TODO: Replace the following with your app's Firebase project configuration at project settings part
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
@@ -38,33 +42,36 @@ export const createUser = async (email, password, navigate, displayName) => {
       displayName: displayName,
     });
     navigate("/");
+    toastSuccessNotify("Registered successfully!");
     console.log(userCredintal);
   } catch (error) {
-    alert(error.message);
+    toastErrorNotify(error.message);
   }
 };
 
 export const signIn = async (email, password, navigate) => {
   try {
-    let userCredintal = await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
     navigate("/");
+    toastSuccessNotify("Logged in successfully!");
   } catch (error) {
-    alert(error.message);
+    toastErrorNotify(error.message);
   }
 };
-
 export const userObserver = (setCurrentUser) => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setCurrentUser(user);
+  onAuthStateChanged(auth, (currentUser) => {
+    if (currentUser) {
+      setCurrentUser(currentUser);
     } else {
       setCurrentUser(false);
     }
   });
 };
 
-export const logOut = () => {
+export const logOut = (navigate) => {
   signOut(auth);
+  navigate("/");
+  toastSuccessNotify("Logged out successfully!");
 };
 
 export const signUpWithGoogle = (navigate) => {
@@ -74,6 +81,7 @@ export const signUpWithGoogle = (navigate) => {
     .then((result) => {
       console.log(result);
       navigate("/");
+      toastSuccessNotify("Logged in successfully!");
     })
     .catch((error) => {
       console.log(error);

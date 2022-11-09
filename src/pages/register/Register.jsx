@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { createUser, signUpWithGoogle } from "../../auth/firebase";
 import { useNavigate } from "react-router-dom";
+import RegisterStyled, { Btn, Input } from "./RegisterStyled";
+import GoogleIcons from "../../assets/icons/GoogleIcon";
 const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -19,44 +21,43 @@ const Register = () => {
     signUpWithGoogle(navigate);
   };
   return (
-    <div>
-      <h2>Sign Up</h2>
+    <RegisterStyled>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           placeholder="first name"
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
         <br />
-        <input
+        <Input
           type="text"
           placeholder="last name"
           onChange={(e) => setLastName(e.target.value)}
           required
         />
         <br />
-        <input
+        <Input
           type="email"
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <br />
-        <input
+        <Input
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <br />
-        <button>register</button>
+        <Btn>register</Btn>
         <br />
-        <button type="button" onClick={handleGoogleProvider}>
-          continue with google
-        </button>
+        <br />
+        <GoogleIcons onClick={handleGoogleProvider} />
       </form>
-    </div>
+    </RegisterStyled>
   );
 };
 

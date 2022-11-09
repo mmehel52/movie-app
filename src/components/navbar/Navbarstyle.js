@@ -27,5 +27,10 @@ export const MenuDiv = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+export const Avatar = styled.img`
+  width: 3rem;
+  border-radius: 50%;
+  margin: 2px;
+`;
 
 export default NavbarStyled;

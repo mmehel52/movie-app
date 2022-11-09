@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import DetailStyled, {
   CardImg,
@@ -15,6 +15,7 @@ const MovieDetail = () => {
   const [video, setVideo] = useState("");
   const [movdet, setMovdet] = useState("");
   const navigate = useNavigate();
+  const { id } = useParams();
   const { state: detail } = useLocation();
   const API_KEY = "a1438880f784e9a353cf7ea5917e3916";
   const url = `https://api.themoviedb.org/3/movie/${detail.id}/videos?api_key=${API_KEY}`;

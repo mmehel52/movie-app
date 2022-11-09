@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import MovieCard, { CardImg, Det, Pp, Overview } from "./MoviecardStyled";
 
 const Moviecard = ({ movie }) => {
   const navigate = useNavigate();
   // console.log(movie);
   //
+  const { currentUser } = useContext(AuthContext);
   const getVoteClass = (vote) => {
     if (vote > 8) {
       return "green";
@@ -17,7 +19,7 @@ const Moviecard = ({ movie }) => {
   };
   return (
     <MovieCard
-      onClick={() => navigate("/moviedetail/" + movie.id, { state: movie })}
+      onClick={() => navigate("moviedetail/" + movie.id, { state: movie })}
     >
       <CardImg src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} />
       <Det>

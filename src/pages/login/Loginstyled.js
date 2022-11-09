@@ -7,8 +7,9 @@ const LoginStyled = styled.div`
   min-height: 90vh;
 `;
 export const CardImg = styled.img`
-  width: 55rem;
-  margin-bottom: -0.2rem;
+  width: 65vw;
+  height: 89vh;
+  padding-bottom: 1.5vh;
   border-right: 3px solid ${({ theme }) => theme.colors.header};
   @media (max-width: ${({ theme }) => theme.responsive}) {
     display: none;

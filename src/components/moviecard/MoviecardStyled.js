@@ -38,7 +38,7 @@ export const Det = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.header};
+  background-color: ${({ theme }) => theme.colors.body};
   color: white;
   width: 18rem;
   height: 6rem;

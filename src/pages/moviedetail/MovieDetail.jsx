@@ -52,7 +52,7 @@ const MovieDetail = () => {
       <Video src={`https://www.youtube.com/embed/${video.key}`}></Video>
       <Bottom>
         <CardImg
-          src={`https://image.tmdb.org/t/p/w1280${movdet.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w1280${movdet.backdrop_path}`}
         />
         <Detail>
           <div>

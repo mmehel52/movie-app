@@ -3,3 +3,6 @@
 ## Demo
 
 ![aaaaa](https://github.com/mmehel52/movie-app/blob/master/Animation.gif)
+
+
+
